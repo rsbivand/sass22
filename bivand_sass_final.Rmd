@@ -15,7 +15,13 @@ Analytical environments are layered abstractions, and may be understood differen
 
 In this chapter, a partly autobiographical approach has been adopted in order to position this reading of how analytical environments may be understood as outcomes of willed actions. These willed actions, to provide software among other things for teaching and research, do not limit themselves to achieving pre-defined goals. In the cases used, Python and R, the reach and influence of the language platforms has evolved greatly over the twenty years work has been progressing. In addition, the communities of users and developers have matured and grown, although the pressing need for bringing in younger and more diverse contributors is recognised.
 
-We also know too little about the impact of these analytical environments, as citation practice with regard to software tools such as Python or R packages has not been encouraging in the social sciences. Going forward, and as part  of the movement towards reproducible research, it would be interesting to encourage journal  editors to require article authors to document their work by citing the software used. Unfortunately, as of now it is not possible to give a systematic overview of who uses which analytical envirnment for what, so this chapter will follow the chosen partly autobiographical approach, rendering  the claims advanced largely subjective.
+We also know too little about the impact of these analytical environments, as citation practice with regard to software tools such as Python or R packages has not been encouraging in the social sciences. Going forward, and as part  of the movement towards reproducible research, it would be interesting to encourage journal  editors to require article authors to document their work by citing the software used. Unfortunately, as of now it is not possible to give a systematic overview of who uses which analytical environment for what, so this chapter will follow the chosen partly autobiographical approach, rendering  the claims advanced largely subjective.
+
+```{r setup, echo=FALSE}
+knitr::opts_chunk$set(dpi = 300)
+knitr::opts_chunk$set(dev=c('png'))
+```
+
 
 ## Introduction
 
@@ -33,7 +39,7 @@ This chapter will consider the background to selected analytical environments fo
 
 While spatial data encompass more than areal data, such as aggregate census counts within arbitrarily given boundaries, it remains important to develop appropriate methods, and to propose and describe how they should be used in research practice. In the 1950s, some tabulation could be done by machine, but most calculation in the social sciences was done manually. During the 1960s, psychometricians and some social scientists, as well as their statistician colleagues and co-authors, began to be able to access computers, but most methods needed to be implemented as software using available languages such as Fortran and Algol using batch processing, or BASIC, which provided a degree of interactivity when using a teletype terminal.
 
-Once SAS (1972) and SPSS (1968) became available for batch processing on mainframe computers, many university quanitative social scientists were relieved of the burden of building software from scratch, and analytical environments developed around the proprietary systems available. If the required method was not available, researchers still needed to be able to compile from source, but as compilers were always provided with mainframe computers, this was only an additional step, provided source code was available. Note that it was not uncommon at this time for authors to offer access to listings of source code in papers and books [@cliff+ord:69; @bivand09].
+Once SAS (1972) and SPSS (1968) became available for batch processing on mainframe computers, many university quantitative social scientists were relieved of the burden of building software from scratch, and analytical environments developed around the proprietary systems available. If the required method was not available, researchers still needed to be able to compile from source, but as compilers were always provided with mainframe computers, this was only an additional step, provided source code was available. Note that it was not uncommon at this time for authors to offer access to listings of source code in papers and books [@cliff+ord:69; @bivand09].
 
 The entry of minicomputers and microcomputers during the 1970s presented challenges to the batch processing mainframe model of computing in the social sciences. It took time for licensing and software publication business models to catch up with new hardware opportunities. However, libraries of Fortran subroutines for linear algebra (LINPACK, EISPACK) were released to the public domain, initially on magnetic tape, later from FTP archives. Researchers still needed to compile from source, linking to these libraries. A profusion of development environments arose, like MATLAB, which was written to give interactive access to linear algebra functionalities (MATrix LABoratory).
 
@@ -52,7 +58,7 @@ In this article, a number of pictures will be drawn, hoping to indicate in a non
 
 ## Environments for handling spatial data
 
-Bending towards the consideration of autobiography in @holt-jensen:19, I have chosen to discuss environments that have informed and shaped my own work [see also @johnston:19; @vanmeeteren19]. I learned to program as a PhD student at the London School of Economics in the early 1970s, because I needed to handle and analyse data for my thesis in ways that were not otherwise possible using software available at the Univerity of London Computing Centre.
+Bending towards the consideration of autobiography in @holt-jensen:19, I have chosen to discuss environments that have informed and shaped my own work [see also @johnston:19; @vanmeeteren19]. I learned to program as a PhD student at the London School of Economics in the early 1970s, because I needed to handle and analyse data for my thesis in ways that were not otherwise possible using software available at the University of London Computing Centre.
 
 ### London, early 1970s
 
@@ -60,17 +66,17 @@ Few social science departments had facilities for technical drawing when books a
 
 Figure 1 (left panel) shows a typical example of a hand-drafted map showing county boundaries, county letter codes and contiguous neighbour counts used extensively in @cliff+ord:73 for testing for spatial autocorrelation. When the figure was prepared, very few researchers irrespective of discipline had access to hardware permitting the input of boundary positions as data, or to hardware for outputting hard copy maps.
 
-I was fortunate to participate in the doctoral programme at the Department of Geography, London School of Economics 1972-1975. We had access to a Wang minicomputer (probably a 2200 model with CRT, using Basic for programming), connected to a large digitizer. This let those of us willing to use considerable time to construct boundaries by recording chosen boundary points. The points were then listed in line sets, and line sets as closed polygon boundary sets; other examples of work using a Wang mincomputer with a digitizer may be found [@JEREMIASSON1976507].
+I was fortunate to participate in the doctoral programme at the Department of Geography, London School of Economics 1972-1975. We had access to a Wang minicomputer (probably a 2200 model with CRT, using Basic for programming), connected to a large digitizer. This let those of us willing to use considerable time to construct boundaries by recording chosen boundary points. The points were then listed in line sets, and line sets as closed polygon boundary sets; other examples of work using a Wang minicomputer with a digitizer may be found [@JEREMIASSON1976507].
 
 ![Figure 1. Left panel: Counties of the Irish Republic, (Cliff and Ord, 1973, page 54; Right panel: Population density in London, 1971, (Shepherd et al., 1974, page 15.)](Figs1_2.png)
 
 Figure 1 (right panel) is typical of the output of choropleth maps with boundary input digitized using the Wang minicomputer [@shepherdetal:74]. Margaret Jeffery and Hazel O'Hare wrote software called "Chormap" to utilize the digital polygon boundaries with matching census data, to be run in batches on the University of London Computing Centre CDC7600, and output on a CalComp 1670 microfilm recorder on 35mm monochrome film. The association of input and output hardware, together with uniquely skilled technical assistance made it possible for the very few researchers with access to these resources to plot publishable choropleth maps much more efficiently than hand drafting had permitted. These polygon boundaries also permitted the extraction of lists of neighbouring Norwegian census tracts, used in my thesis to calculate Moran's $I$ statistics using self-written software [@bivand:75]. 
 
-This analytical environment was people-based, a community of graduate students and junior lecturers, who needed to create choropleth maps from census data, and carry out aspatial analyses, for example using SPSS. Any non-standard analyses meant creating software oneself in Basic or Fortran; some shared code was available, and advice from colleagues very helpful.
+This analytical environment was people-based, a community of graduate students, technical staff and junior lecturers, who needed to create choropleth maps from census data, and carry out aspatial analyses, for example using SPSS. Any non-standard analyses meant creating software oneself in Basic or Fortran; some shared code was available, and advice from colleagues very helpful.
 
 ### Geographical information systems and handling spatial data
 
-The subsequent emergence of geographical information systems (GIS) software, and of the adoption of standards for file formats for transferring spatial data, made it easier for social scientists to work where no digitzers were available. The US Census introduced the Topologically Integrated Geographic Encoding and Referencing (TIGER) format [@MARX1986181], and others adopted other ad-hoc standards. The earlier GIS ran only on larger, multi-user computer systems with command line interfaces. During the 1990s, ESRI introduced ArcView, and MapInfo Corporation MapInfo; these were programs with graphical user interfaces for personal computers. They used the ESRI Shapefile and Mapinfo TAB file formats respectively, and both formats used multiple files for a single data collection, and dBase DBF files to hold attribute data.
+The subsequent emergence of geographical information systems (GIS) software, and of the adoption of standards for file formats for transferring spatial data, made it easier for social scientists to work where no digitizers were available. The US Census introduced the Topologically Integrated Geographic Encoding and Referencing (TIGER) format [@MARX1986181], and others adopted other ad-hoc standards. The earlier GIS ran only on larger, multi-user computer systems with command line interfaces. During the 1990s, ESRI introduced ArcView, and MapInfo Corporation MapInfo; these were programs with graphical user interfaces for personal computers. They used the ESRI Shapefile and Mapinfo TAB file formats respectively, and both formats used multiple files for a single data collection, and dBase DBF files to hold attribute data.
 
 Typically, digitizer output was specified in planar units, often in the native units of the digitizer itself, or in decimal inches or millimetres. At this stage, coordinate reference systems (CRS) were not seen as essential. This treatment of CRS as unimportant extended to the specification of the ESRI Shapefile [@esri-shp:98], which was only subsequently optionally supplemented with a `*.prj` file containing an ESRI-specific Well Known Text representation. 
 
@@ -80,7 +86,7 @@ The adoption of GIS in human geography among the social sciences led to accusati
 
 ### Moving beyond GIS
 
-It is not however the case that being able to handle spatial data, especially aggregate data, has passed by without application in the social sciences, despite the "science wars". One example is the use of R as an environment for handling and visualizing data, some of which is spatial [@cheshire+uberti:14]. One of the authors relates in a [blog](https://jcheshire.com/visualisation/coder-designer/) that:
+It is not however the case that being able to handle spatial data, especially aggregate data, has passed by without application in the social sciences, despite the "science wars". One example is the use of R as an environment for handling and visualizing data, some of which is spatial [@cheshire+uberti:14]. One of the authors related in a blog (https://jcheshire.com/visualisation/r-visualisations-design/) that:
 
 > The majority of graphics we produced for London: The Information Capital required R code in some shape or form. This was used to do anything from simplifying millions of GPS tracks, to creating bubble charts or simply drawing a load of straight lines. We had to produce a graphic every three days to hit the publication deadline, so without the efficiencies of copying and pasting old R code, or the flexibility to do almost any kind of plot, the book would not have been possible.
 
@@ -98,12 +104,13 @@ R [@R-itself] and Python [@10.5555/1593511] permit scripts to be written using b
 
 Python packages are provided in a very similar way using the Python Package Index. Unlike R, Python packages should not be installed in a running Python session, but prior to its commencement. Typically, `pip` has been used to manage handling contributed packages, and more recently complete `conda` computing environments are also available. Specified computing environments permit users to carry out chosen tasks without the need to install chains of individual software components, in much the same way as the decision by CRAN to link Windows and MacOS packages accessing external libraries statically. External libraries do evolve, and if a new version changes an interface component for whatever reason, then software such as Python or R packages using that library but linking dynamically would need re-compilation. Further opportunities for customizing and controlling computing environments are offered by containers such as Docker, or by using Binder to create computing environments for remote users.
 
-While computing environments are a strict subset of analytical environments, they do matter a great deal. Community activity on mailing lists and question-and-answer fora often provide example scripts resolving problems. These solutions are however dependent on the versions of software components being used, both the packages themselves, other packages they use, and the external software libraries that they interface. Open source packages for analysing spatial data share many components in their use of open source external libraries, and this leaves most of them vulnerable to changes [@bivand14]. Such changes do occur frequently, recently in [PROJ](https://proj.org/), [GEOS](https://trac.osgeo.org/geos) and [GDAL](https://gdal.org/). These changes lead to churn in releases of R and Python packages as small numbers of maintainers struggle to adapt to upstream changes while assuring the stability of downstream packages and scripted workflows.
+While computing environments are a strict subset of analytical environments, they do matter a great deal. Community activity on mailing lists and question-and-answer fora often provide example scripts resolving problems. These solutions are however dependent on the versions of software components being used, both the packages themselves, other packages they use, and the external software libraries that they interface. Open source packages for analysing spatial data share many components in their use of open source external libraries, and this leaves most of them vulnerable to changes [@bivand14]. Such changes do occur frequently, recently in [PROJ](https://proj.org/) [@PROJ_DOI], [GEOS](https://trac.osgeo.org/geos) and [GDAL](https://gdal.org/) [@GDAL_DOI]. These changes lead to churn in releases of R and Python packages as small numbers of maintainers struggle to adapt to upstream changes while assuring the stability of downstream packages and scripted workflows.
 
 Examples of upstream changes in PROJ and GDAL feeding through into R and Python packages concern the ways in which coordinate reference systems (CRS) are represented. In the 1990s, the specification of CRS of spatial data was downplayed; for example `.prj` files containing a text version of the CRS were optional. Correct CRS specification impacted visualization in web mapping applications from the mid-2000s, and was always essential for the integration of data across multiple data sources. In such cases of upstream changes, a change in the computing environment may engender changes in the wider analytical environment, where users are obliged to absorb technical details which might have seemed unimportant.
 
 
 ### R and contributed packages
+
 
 ```{r, echo=FALSE, eval=FALSE, results='hide'}
 Population0 <-read.csv("data/KS101EW_oa11.csv")
@@ -113,6 +120,7 @@ Employment <- Employment0[, c(1:2, 6, 20)]
 all.equal(100*Employment[,3]/Employment[,2], Employment[,4])
 Employment <- merge(Employment, Population, by="GeographyCode")
 names(Employment) <- c("OA11CD", "all_categories_economic_activity", "economically_active_unemployed", "Unemployment", "Population")
+Sys.setenv(PROJ_NETWORK="ON")
 suppressPackageStartupMessages(library(sf))
 output_areas <- st_read("data/Camden_oa11.shp", quiet=TRUE)
 st_crs(output_areas) <- 27700
@@ -120,12 +128,14 @@ oa_census <- merge(output_areas, Employment, by="OA11CD")
 st_write(oa_census, "oa_census.gpkg", delete_layer=TRUE, quiet=TRUE)
 ```
 
+
 ```{r}
+Sys.setenv(PROJ_NETWORK="ON")
 library(sf)
 packageVersion("sf")
 ```
 
-The **sf** package [@RJ-2018-009;@sf-package], introduced in late 2016, is a modern replacement for the **sp** package [@pebesma+bivand:05;@sp-package]; see @bivand:20 for a fuller account. In @asdar2 and other books presenting spatial data handling workflows, **sp** is used for both vector and raster data, supplemented by **raster** [@raster-package]. The **rgdal**  package [@rgdal-package] then provided functionalities offered by the external PROJ and GDAL libraries for reading and writing spatial data files; the **rgeos** package [@rgeos-package] interfaced GEOS predicates and topological operations. The **sf** package was first written as a replacement for vector data handling in **sp**, **rgdal** and **rgeos**, but also now supports raster data handling by interfacing GDAL for the **stars** package [@stars-package]. Changing from **sp** based workflows to **sf** based workflows is proceeding, but necessarily impacts the broader analytical environment. It has been important to ensure that **sp** based workflows continue to function as far as possible.
+The **sf** package [@RJ-2018-009;@sf-package], introduced in late 2016, is a modern replacement for the **sp** package [@pebesma+bivand:05;@sp-package]; see @bivand:20 for a fuller account. In @asdar2 and other books presenting spatial data handling workflows, **sp** is used for both vector and raster data, supplemented by **raster** [@raster-package]. The **rgdal**  package [@rgdal-package] then provided functionalities offered by the external PROJ and GDAL libraries for reading and writing spatial data files; the **rgeos** package [@rgeos-package] interfaced GEOS predicates and topological operations. The **sf** package was first written as a replacement for vector data handling in **sp**, **rgdal** and **rgeos**, but also now supports raster data handling by interfacing GDAL for the **stars** package [@stars-package]. Changing from **sp** based workflows to **sf** based workflows is proceeding, but necessarily impacts the broader analytical environment. It has been important to ensure that **sp** based workflows continue to function as far as possible. The **rgdal** and **rgeos** will be retired by or before the end of 2023 to simplify maintenance of the R-spatial package ecosystem.
 
 We will use a dataset from the British Census 2011 for Output Areas in the Borough of Camden in London used in @Bivand2018, and described in detail there. It is stored in a Geopackage format file, which overcomes many of the shortcomings of the legacy ESRI Shapefile format. It is read into an `"sf"` object using the GDAL GPKG driver:
 
@@ -168,7 +178,7 @@ pal <- rcartocolor::carto_pal((length(cI$brks)-1L), "TealGrn")
 
 The left panel of Figure 3 shows a standard choropleth map of unemployment as a percentage of the number of economically active residents, using the **tmap** package [@JSSv084i06; @tmap-package]; the right panel shows the cartogram. Using the same intervals and colours for the output areas map and the cartogram is made easy by passing the class intervals and colour palette just defined.
 
-```{r, echo=TRUE, fig.width=7, fig.height=4, fig.cap="Figure 3: left panel: Percentage unemployment by output area in Camden, 2011 Census; right panel: cartogram of percentage unemployment with output areas adjusted to the size of the economically active population", eval=TRUE, fig=TRUE, message=FALSE}
+```{r, echo=TRUE, fig.width=7, fig.height=4, fig.cap="Figure 2: left panel: Percentage unemployment by output area in Camden, 2011 Census; right panel: cartogram of percentage unemployment with output areas adjusted to the size of the economically active population", eval=TRUE, fig=TRUE, message=FALSE}
 library(tmap)
 a <- tm_shape(camden) + tm_fill("Unemployment", breaks=cI$brks, palette=pal) + 
   tm_layout(main.title="Output Areas")
@@ -187,11 +197,11 @@ camden_wmap <- mapview(camden, zcol="Unemployment", col.regions=pal, at=cI$brks)
 mapshot(camden_wmap, file=file.path(getwd(), "camden_wmap.png"))
 ```
 
-![Figure 4. Interactive choropleth map of percentage unemployment shown on an Open Street Map layer](camden_wmap.png)
+![Figure 3. Interactive choropleth map of percentage unemployment shown on an Open Street Map layer](camden_wmap.png)
 
 In order to create an interactive web map, the `camden` object has to be transformed from the "OSGB 1936 / British National Grid" projected CRS (EPSG:27700) as read in from file to geographical coordinates in the `WGS84` datum (OGC:CRS84), then projected internally to Web Mercator (EPSG:3857) to match the background. The second step is not hard, but the first step depends on the spatial object having a well-defined CRS, and that descriptions of the steps to get from that CRS to the geographical CRS in `WGS84` are known. They may be multiple descriptions, with differing degrees of accuracy. 
 
-Before PROJ 6 and GDAL 3, released in March 2019, projected CRS definitions were typically stored in text files distributed with the software. The definitions, known as Proj4 strings, contained key-value pairs of defintion components, and often provided hints about how to transform to `WGS84`. To transform from one non-`WGS84` datum to another non-`WGS84` datum, maps were transformed first from source CRS to `WGS84`, then on to the target CRS, incurring two sets of transformation errors. Transformation means converting from one datum, a model of deviations from a specified ellipsoid, to another datum [@iliffe+lott:08]. Errors from ignoring datum transformation, termed ballpark accuracy, are typically greater than 100m, or 3 to 4 Landsat 7 satellite image pixels.
+Before PROJ 6 and GDAL 3, released in March 2019, projected CRS definitions were typically stored in text files distributed with the software. The definitions, known as Proj4 strings, contained key-value pairs of definition components, and often provided hints about how to transform to `WGS84`. To transform from one non-`WGS84` datum to another non-`WGS84` datum, maps were transformed first from source CRS to `WGS84`, then on to the target CRS, incurring two sets of transformation errors. Transformation means converting from one datum, a model of deviations from a specified ellipsoid, to another datum [@iliffe+lott:08]. Errors from ignoring datum transformation, termed *ballpark* accuracy, are typically greater than 100m, or 3 to 4 Landsat 7 satellite image pixels.
 
 PROJ 6 (2019) introduced an SQLite database, also used by GDAL 3 (also 2019), to replace the text files distributed with the system. This modernization changed the approach used for datum transformation from partly ad-hoc to authority-based, and happened at the same time as the introduction of the `WKT2:2019` international standard for referencing coordinates [@iso19111]. All geospatial software is adapting to these ongoing changes, and for open source software, the changes are driven by decisions made by PROJ and GDAL developers.
 
@@ -207,50 +217,67 @@ The fully qualified `WKT2:2019` representation as read from the Geopackage file 
 st_crs(camden)
 ```
 
-The step being taken within **mapview** is to transform from the source CRS to the target `OGC:CRS84` CRS; here we will choose the centroid of the first census ouput area as an example, and show the coordinates first in metres, then transformed in decimal degrees at some length (for comparison with Python below): 
+The step being taken within **mapview** is to transform from the source CRS to the target `OGC:CRS84` CRS; here we will choose the centroid of the first census output area as an example (for comparison with Python below): 
 
 ```{r, message=FALSE, warning=FALSE}
 sfc <- st_centroid(camden[1,])
-st_coordinates(sfc) %>% print(digits=16)
-st_transform(sfc, "OGC:CRS84") %>% st_coordinates() %>% print(digits=16)
 ```
-The implementation of `st_transform()` in the **sf** package does not return the transformation pipeline used, but that in **sp**/**rgdal** does, so we repeat the same transformation using the **sp** spatial object representation, getting the same output:
 
-```{r, warning=FALSE}
-sfc_sp <- as(sfc, "Spatial")
-target <- sp::CRS("OGC:CRS84")
-sp::spTransform(sfc_sp, target) %>% sp::coordinates() %>% print(digits=16)
-```
-This implementation also records the last coordinate operation used, which can be returned, and printed with each transformation pipeline step on a separate line. In this case, the best available accuracy (2m) in the absence of transformation grids is offered by a Helmert seven-parameter transformation, with parameters retrieved from the PROJ database:
+From PROJ 7, a cloud resource permits transformation grids to be accessed from a content download network (CDN, https://cdn.proj.org/) on-demand as an Amazon Public Dataset and used if accuracy would be improved. The network may be enabled by setting the environment variable `PROJ_NETWORK` to `ON` before loading the **sf** package or any other package needing access to the CDN. 
 
 ```{r}
-rgdal::get_last_coordOp() %>% gsub("\\+step", "\n+step", .) %>% cat()
+Sys.getenv("PROJ_NETWORK")
 ```
-From PROJ 7, a cloud resource permits transformation grids to be accessed from a content download network ([CDN](https://cdn.proj.org/)) on-demand as an Amazon Public Dataset and used if accuracy would be improved (here by about 1m):
+
+This means that if:
+
+```{r, message=FALSE, warning=FALSE}
+sf_proj_network()
+```
+then `st_transform()` will proceed by first looking up candidate transformation pipelines in the PROJ database, and choose the most accurate, including pipelines using transformation grids. If the required grids are not already available on the system running the command, they will be downloaded and cached before being used; the output coordinates are given with extreme detail to demonstrate below that they agree with the Python output:
+
+```{r, message=FALSE, warning=FALSE} 
+(sfc_ll_best <- st_transform(sfc, "OGC:CRS84")) |> st_coordinates() |> print(digits=17)
+```
+
+Since `st_transform()` does not report which pipeline was chosen, and if we would like to know the choice, we may use `sf_proj_pipelines()` to list the candidate transformation pipelines. Here we see that the tenth accuracy value (given in metres) is the smallest, followed by the second; the last (eleventh) is known as *ballpark* accuracy as its accuracy cannot be determined from the PROJ  database:
 
 ```{r}
-d <- rgdal::enable_proj_CDN()
-sp::spTransform(sfc_sp, target) %>% sp::coordinates() %>% print(digits=16)
-rgdal::disable_proj_CDN()
+trans_pipes <- sf_proj_pipelines(st_crs(sfc), "OGC:CRS84")
+trans_pipes$accuracy
 ```
-Once the transformation grid is available, the transformation pipeline is substantially simplified, with one `+proj=hgridshift` step replacing five steps needed to used the Helmert transformation.
+Transformation pipelines are divided into steps, where here for the best choice the first step reverse projects from OSGB36 to geographical coordinates, next a horizontal grid shift is applied between that datum and the current WGS84 datum (actually the European Terrestrial Reference System 1989 (ETRS89), EPSG:4258, for this grid), finally converting back from radians to degrees:
+
+```{r} 
+gsub("\\+step", "\n+step", trans_pipes$definition[10]) |> cat("\n")
+```
+We can confirm that this pipeline was in fact used by re-running the transformation and specifying the pipeline to be used; the output point is the same as that returned when `st_transfrom()` chose the most accurate available pipeline itself:
+
+```{r, message=FALSE, warning=FALSE} 
+st_transform(sfc, "OGC:CRS84", pipeline=trans_pipes$definition[10]) |> st_distance(sfc_ll_best) |> c()
+```
+Had we persisted in using the legacy Proj.4 string representation described above, no transformation step is present and we simply apply inverse projection:
+
+```{r} 
+gsub("\\+step", "\n+step", trans_pipes$definition[11]) |> cat("\n")
+```
+In this degenerate case, the output point is about 123m from the most accurate transformation:
 
 ```{r}
-rgdal::get_last_coordOp() %>% gsub("\\+step", "\n+step", .) %>% cat()
+st_transform(sfc, "OGC:CRS84", pipeline=trans_pipes$definition[11]) |> st_distance(sfc_ll_best) |> c()
 ```
+In the absence of transformation grids, the next-best transformation pipeline with 2m accuracy is offered by a Helmert seven-parameter transformation, with parameters retrieved from the PROJ database:
 
-Had we persisted in using the Proj.4 string representation, accuracy would only have been ballpark, simply applying inverse projection; we can see that there is no transformation step:
+```{r} 
+gsub("\\+step", "\n+step", trans_pipes$definition[2]) |> cat("\n")
 
-```{r, warning=FALSE}
-degraded_source <- paste0(rgdal::CRSargs(slot(sfc_sp, "proj4string")), " +type=crs")
-pl <- rgdal::list_coordOps(degraded_source, sp::wkt(target))[1, "definition"]
-pl  %>% gsub("\\+step", "\n+step", .) %>% cat()
 ```
-As we can use a transformation pipeline directly in `st_transform()`, we will do so; in this case there is a shift of about 125m to the South-East:
+This pipeline would be the one chosen if the transformation grid was not available and automatic downloading from the PROJ content download network was turned off; the point  is almost 2m from the most accurate transformation known to the PROJ database:
 
 ```{r}
-st_transform(sfc, pipeline=pl) %>% st_coordinates() %>% print(digits=17)
+st_transform(sfc, "OGC:CRS84", pipeline=trans_pipes$definition[2]) |> st_distance(sfc_ll_best) |> c()
 ```
+In other settings, the PROJ database offers a starker choice between enabling the CDN and only *ballpark* accuracy if grid transformation is not available, so use of `sf_proj_pipelines()` to check which choices are available is advised.
 
 Handling spatial data, then, requires that the geometries of the spatial entities be recorded and input, be associated with the best available specification of the CRS, be correctly associated with the values of variables of interest, be subsetted and transformed, and usually be visualized in the form of thematic cartography. It is only very recently that it has been desirable to pay sustained attention to coordinate reference systems and their transformation. To put this brief presentation of some simple aspects of the R environment for spatial data handling, we'll now draw on Python equivalents. These environments are by no means just the language platform and contributed packages, but include upstream software libraries, software developers and maintainers and their interactions with users, and the varied ways in which these participants conceive of their needs and the goals of their activities.
 
@@ -259,7 +286,7 @@ Handling spatial data, then, requires that the geometries of the spatial entitie
 
 ### Python  and contributed packages
 
-The whole Python environment has been shifting to Python 3, causing some churn among packages. For geospatial data, the **geopandas** package  [@geopandas-package] uses a similar approach to the R **sf** package, representing data as a data frame with a geometry column. Unlike **sf**, **geopandas** does not itself link to PROJ, GDAL or GEOS, relying on the **pyproj** package for PROJ [@pyproj-package], the **Fiona** package for GDAL [@fiona-package], and the **Shapely** package for GEOS [@shapely-package]:
+The whole Python environment has shifted to Python 3, causing some churn among packages. For geospatial data, the **geopandas** package  [@geopandas-package] uses a similar approach to the R **sf** package, representing data as a data frame with a geometry column. Unlike **sf**, **geopandas** does not itself link to PROJ, GDAL or GEOS, relying on the **pyproj** package for PROJ [@pyproj-package], the **Fiona** package for GDAL [@fiona-package], and the **Shapely** package for GEOS [@shapely-package]:
 
 ```{python, warning=FALSE}
 import geopandas
@@ -285,58 +312,64 @@ In R, we took the centroid of the first output area, indexing by 1 because R ind
 cent1 = geodf.centroid[0]
 cx = cent1.x
 cy = cent1.y
-[cx, cy]
 ```
-The CRS of the census output areas data set is shown as WKT2:2019, and is identical with the **sf** output above:
+The CRS of the census output areas data set is identical with the **sf** output above:
 
 ```{python}
-print(geodf.crs.to_wkt(pretty=True))
+geodf.crs
 ```
 
-The adoption by **geopandas** of the **pyproj** CRS interface described in a helpful [blog](https://jorisvandenbossche.github.io/blog/2020/02/11/geopandas-pyproj-crs/) mirrors the changes made in the R spatial package ecosystem. Indeed, the **pyproj** package was an early mover in this respect, and coding in **rgdal** was in part based on the then development version of **pyproj** [@pyproj-package]. Anecdotally, the use of Cython to interface the compiled code of PROJ in **pyproj** permitted the prototyping of **rgdal** functionality during a 7 hour train trip in late October 2019, leading to workable listing of transformations from a source CRS to a target CRS. The benefits of open source software also lie in seeing how other communities have approached shared puzzles.
+The adoption by **geopandas** of the **pyproj** CRS interface described in a helpful blog (https://jorisvandenbossche.github.io/blog/2020/02/11/geopandas-pyproj-crs/) mirrors the changes made in the R spatial package ecosystem. Indeed, the **pyproj** package was an early mover in this respect, and coding in **rgdal** was in part based on the then development version of **pyproj** [@pyproj-package]. Anecdotally, the use of Cython to interface the compiled code of PROJ in **pyproj** permitted the prototyping of this functionality during a 7 hour train trip in late October 2019, leading to workable listing of transformations from a source CRS to a target CRS; `TransformerGroup()` is very similar to `sf::sf_proj_pipelines()`. The benefits of open source software also lie in seeing how other communities have approached shared puzzles.
 
-It is then not surprising that **rgdal** and **sf** retrieve the same transformation pipelines from PROJ as **pyproj** does. Here we'll retrieve all the feasible pipelines included in a `TransformerGroup` object. We turn on the CDN first to include any relevant transformation grid (here downloaded during the first such run in R above):
+It is then not surprising that **sf** retrieves the same transformation pipelines from PROJ as **pyproj** does. Here we'll retrieve all the feasible pipelines included in a `TransformerGroup` object. We turn on the CDN first to include any relevant transformation grid (here downloaded and cached during the first such run in R above):
 
 ```{python}
 import pyproj
 from pyproj.transformer import TransformerGroup
 pyproj.network.set_network_enabled(True)
 tg = TransformerGroup(geodf.crs, 'OGC:CRS84', always_xy=True)
+itg = TransformerGroup('OGC:CRS84', geodf.crs, always_xy=True)
 tg
 ```
-The best available pipeline is returned in the 0-index position, then the candidates are included in decreasing order of accuracy; this is the grid-based transformation:
+The best available pipeline is returned in the 0-index position; this is the grid-based transformation:
 
 ```{python}
 import re
-print(re.sub("step", "\nstep", tg.transformers[1].definition))
+print(re.sub("step", "\nstep", tg.transformers[0].definition))
 ```
-yielding exactly the same output coordinates as above. So GEOS is returning the same projected coordinates for the centroid of the first census output area, and PROJ is returning the same best available transformation pipeline and using it to yield the same output coordinates:
+GEOS is here returning the same projected coordinates for the centroid of the first census output area in projected coordinates, and PROJ is returning the same best available transformation pipeline and using it to yield the same output coordinates:
 
 ```{python}
-tg.transformers[1].transform(cx, cy)
+ll0 = tg.transformers[0].transform(cx, cy)
+ll0
 ```
 
-The second Helmert transformation-based pipeline is again the same:
+The second pipeline is the same Helmert transformation-based one as above:
 
 ```{python}
-pyproj.network.set_network_enabled(False)
 print(re.sub("step", "\nstep", tg.transformers[2].definition))
 ```
-and yields the same coordinates:
+and yields a similar distance between coordinates. There does not seem to be functionality in **geopandas** or packages it uses to calculate distances on the sphere, so we transform back using the grid-based transformation and measure the distance on the plane; **sf** in R uses the **s2** package interfacing the `s2geometry` library, so the measurement is not identical:
 
 ```{python}
-tg.transformers[2].transform(cx, cy)
+ll2 = tg.transformers[2].transform(cx, cy)
+from shapely.geometry import Point
+point_df = geopandas.GeoDataFrame({'geometry': [Point(itg.transformers[0].transform(ll2[0], ll2[1]))]}, crs='EPSG:27700')
+point_df.distance(cent1)
 ```
-Finally, the ballpark accuracy transformation pipeline is the same:
+Finally, the *ballpark* accuracy transformation pipeline is the same:
 
 ```{python}
-print(re.sub("step", "\nstep", tg.transformers[11].definition))
+print(re.sub("step", "\nstep", tg.transformers[10].definition))
 ```
-with the same output coordinates:
+with almost the same distance between points:
 
 ```{python}
-tg.transformers[11].transform(cx, cy)
+ll10 = tg.transformers[10].transform(cx, cy)
+point_df = geopandas.GeoDataFrame({'geometry': [Point(itg.transformers[0].transform(ll10[0], ll10[1]))]}, crs='EPSG:27700')
+point_df.distance(cent1)
 ```
+
 So for important components of spatial data handling, the Python and R environments perform in very similar ways, not least because both build on the strengths of the same underlying open source geospatial software libraries. Density (count per unit area) measures build on the same library, GEOS, to calculate polygon areas, but then need to use other software implementations for creating a numeric sequence and quantiles, R using `seq()` in base-R and `quantile()` in the base-R **stats** package, but in Python two functions in **numpy**:
 
 
@@ -372,7 +405,7 @@ cIfj
 ```
 We can create a figure similar to Figure 3 using **matplotlib** and inserting the `TealGrn` colour palette used above:
 
-```{python, fig.cap="Figure 5: left panel: Percentage unemployment by output area in Camden, 2011 Census; right panel: cartogram of percentage unemployment with output areas adjusted to the size of the economically active population", fig=TRUE, message=FALSE}
+```{python, eval=TRUE, fig.cap="Figure 4: left panel: Percentage unemployment by output area in Camden, 2011 Census; right panel: cartogram of percentage unemployment with output areas adjusted to the size of the economically active population", fig=TRUE, message=FALSE}
 import matplotlib.pyplot as plt
 from matplotlib.colors import ListedColormap
 mycmap = ListedColormap(["#b0f2bc", "#82e6aa", "#5bd4a4", "#3fbba3", "#2e9ea1", "#257d98"])
@@ -414,16 +447,17 @@ The print method for the neighbour object reports the number of regions and of n
 lw <- nb2listw(nb_q, style="W")
 ```
 
-Once we have the neighbour sets, we can attach weights to the links, for example row-standardising the weights for each observation so that they sum to unity for each observation, using `style="W"`. W can compare the sizes of the objects: the spatial weights list `lw`, the same object converted into a dense matrix, and converted into a parse matrix, here given in Kb:
+Once we have the neighbour sets, we can attach weights to the links, for example row-standardising the weights for each observation so that they sum to unity for each observation, using `style="W"`. W can compare the sizes of the objects: the spatial weights list `lw`, the same object converted into a dense matrix, and converted into a sparse matrix (from **spdep** version 1.2-1, modelling functionality is to be found  in **spatialreg**), here given in Kb:
 
 ```{r, message=FALSE, warning=FALSE}
 sz1 <- object.size(lw)
 sz2 <- object.size(listw2mat(lw))
+requireNamespace("spatialreg", quietly=TRUE)
 sz3 <- object.size(as(lw, "CsparseMatrix"))
 sz <- c("listw"=sz1, "dense"=sz2, "sparse"=sz3)
 round(sz/1024, 1)
 ```
-In the  Python environment, the **libpysal** package [@libpysal-package] can be used to create a Queen-criterion neighbour object from the polygons in the **geopandas** object; the tabulation of counts of observations with the same numbers of neighbours is the same as for `poly2nb()`:
+In the  Python environment, the **libpysal** package [@libpysal-package; @https://doi.org/10.1111/gean.12276] can be used to create a Queen-criterion neighbour object from the polygons in the **geopandas** object; the tabulation of counts of observations with the same numbers of neighbours is the same as for `poly2nb()`:
 
 ```{python}
 from libpysal import weights
@@ -466,25 +500,30 @@ I_ia <- localmoran(camden[["Unemployment"]], lw, mlvar=FALSE)
 print(sum(I_ia[,1])/Szero(lw), digits=16)
 ```
 
-Figure 5 presents the standard deviates of local Moran's $I_i$ calculated under randomisation on a choropleth map and a cartogram - even though the output areas are designed to be similar in counts, the visual impact of the two displays differs somewhat. While it might be tempting to see the strong negative local spatial autocorrelation measure in one southern output area (here an oddly-shaped OA with 10% unemployment among about 300 economically active where only 30 inhabitants were not economically active), the OA contains Russell Square, the Senate House of the University of London, and most of the British Museum, so any interpretation might well be  misleading. On the other hand, the stronger positive local autocorrelation seen around Rowley Way and Ainsworth Way on the edge of the borough in the west reflects neighbouring OAs with 6-9% unemployment. The cartogram helpfully slims the visual impact of the OA after its area has been adjusted by the number of economically active:
+Figure 5 presents hotspot cluster core maps of local Moran's $I_i$ calculated under randomisation on a choropleth map and a cartogram - even though the output areas are designed to be similar in counts, the visual impact of the two displays differs somewhat. The figure does not follow the proposal advanced in @https://doi.org/10.1111/gean.12164, to firstly adjust the probability values by false discovery rate and secondly tighten the cutoff for *interesting* observations to $0.005$, as this would have left no *interesting* observations for the variable in question.
 
-```{r, echo=TRUE, fig.width=7, fig.height=4, fig.cap="Figure 5: Standard deviates of local Moran's I: left panel: choropleth map; right panel: cartogram", eval=TRUE, fig=TRUE}
-camden$ZI_i <- I_ia[, "Z.Ii"]
-sf_cont$ZI_i <- I_ia[, "Z.Ii"]
-a <- tm_shape(camden) + tm_fill("ZI_i", n=6, midpoint=0, pal="BrBG") + tm_layout(main.title="Output Areas")
-b <- tm_shape(sf_cont) + tm_fill("ZI_i", n=6, midpoint=0, pal="BrBG") + tm_layout(main.title="Cartogram", legend.show=FALSE)
+While it might be tempting to see the `"Low-Low"` local spatial autocorrelation measure in one southern output area (here an oddly-shaped OA with 10% unemployment among about 300 economically active where only 30 inhabitants were not economically active), the OA contains Russell Square, the Senate House of the University of London, and most of the British Museum, so any interpretation might well be  misleading. On the other hand, the  `"High-High"` local autocorrelation seen around Rowley Way and Ainsworth Way on the edge of the borough in the west reflects neighbouring OAs with 6-9% unemployment. The cartogram helpfully adjusts the visual impact of the OA after its area has been adjusted by the number of economically active:
+
+```{r, echo=TRUE, fig.width=7, fig.height=4, fig.cap="Figure 5: Local Moran's I hotspot cluster cores: left panel: choropleth map; right panel: cartogram", eval=TRUE, fig=TRUE}
+HS <- attr(I_ia, "quadr")$mean
+is.na(HS) <- p.adjust(I_ia[, "Pr(z != E(Ii))"], "none") >= 0.05
+camden$HS <- HS
+sf_cont$HS <- HS
+a <- tm_shape(camden) + tm_fill("HS", palette=pal, colorNA="grey95", textNA="Not \"interesting\"") + tm_layout(main.title="Output Areas")
+b <- tm_shape(sf_cont) + tm_fill("HS", palette=pal, colorNA="grey95", textNA="Not \"interesting\"") + tm_layout(main.title="Cartogram", legend.show=FALSE)
 tmap_arrange(a, b)
 ```
 
-Here we have used R and Python to exemplify how flexible a command line interface may be. Both of these offer notebooks, permitting reports to be written embedding code, the output of executing the code, and text relating these to the questions being handled in a single document. This approach has been followed here as an Rmarkdown document rendered into Word format (source materials available from https://github.com/rsbivand/sass20). We could also have referred to ArcGIS [@Scott2010], the original SpaceStat system [@anselin92], or indeed GeoDa [@anselinetal:06] and other analytical environments, but have chosen to present R and Python as examples of analytical environments within the broader open source geospatial communities. In conclusion, it is worth stressing that these analytical environments are not (just) computer scripts, packages, libraries or languages; they grow and thrive through self-constituted and self-renewing communities of users and developers. In particular, if users intervene actively to express needs for additional functionalities, it is likely that progress will be achieved, but being active is crucial, as there is no "sales department" searching for unexploited demand.
+Here we have used R and Python to exemplify how flexible a command line interface may be. Both of these offer notebooks, permitting reports to be written embedding code, the output of executing the code, and text relating these to the questions being handled in a single document. This approach has been followed here as an Rmarkdown document rendered into Word format (source materials available from https://github.com/rsbivand/sass22). We could also have referred to ArcGIS [@Scott2010], the original SpaceStat system [@anselin92], or indeed GeoDa [@anselinetal:06; @https://doi.org/10.1111/gean.12311] and other analytical environments, but have chosen to present R and Python as examples of analytical environments within the broader open source geospatial communities. In conclusion, it is worth stressing that these analytical environments are not (just) computer scripts, packages, libraries or languages; they grow and thrive through self-constituted and self-renewing communities of users and developers. In particular, if users intervene actively to express needs for additional functionalities, it is likely that progress will be achieved, but being active is crucial, as there is no "sales department" searching for unexploited demand.
 
 ## Prospects
 
 As the ease of use of notebook approaches to authoring research reports increases, and as commitments to reproducible research strengthen [@brunsdon+comber:20], the scripting language used may slip into the background. Many tools are already available, and applied researchers will be most concerned to use these tools in addressing relevant research  questions. 
 
-It will remain relevant to compare implementations of research methods in software tools. With co-authors, I have been attempting to compare the implementations of tools in different analytical environments for analysing spatial data: fitting spatial regression models [@bivand+piras:15], fitting spatial multilevel models [@bivandetal17a], and testing for spatial autocorrelation [@Bivand2018]. When we know more about reasons for differences in tools apparently implenenting the same method, users will be able to be confident that at least the calculation of results is carried out in a documented way.
+It will remain relevant to compare implementations of research methods in software tools. With co-authors, I have been attempting to compare the implementations of tools in different analytical environments for analysing spatial data: fitting spatial regression models [@bivand+piras:15; @math9111276], fitting spatial multilevel models [@bivandetal17a], and testing for spatial autocorrelation [@Bivand2018]. When we know more about reasons for differences in tools apparently implementing the same method, users will be able to be confident that at least the calculation of results is carried out in a documented way.
 
-Without doubt there is more to do, and it remains important to maintain and enhance collaboration between those implementing similar functionalities in the various environments, as we undoubtedly have much to share and to learn from each other. In this spirit, building communities of developers and users emerges as being as important as maintaining software and carrying out reseach into methods in geoinformatics, spatial statistics, or visualization. The R community has been fortunate in seeing advances in this respect, with a recent book as an example [@geocompr]. The PySAL community is also working on a [work-in-progress book](https://geographicdata.science/book/intro.html), as are the R-spatial community - [work-in-progress](https://www.r-spatial.org/book) is perhaps optimistic given the delays that re-basing coordinate reference systems have engendered. All these three reviews are also available online, and all use the notebook paradigm embedding reproducible code examples in the text.
+Without doubt there is more to do, and it remains important to maintain and enhance collaboration between those implementing similar functionalities in the various environments, as we undoubtedly have much to share and to learn from each other. In this spirit, building communities of developers and users emerges as being as important as maintaining software and carrying out research into methods in geoinformatics, spatial statistics, or visualization. The R community has been fortunate in seeing advances in this respect, with a recent book undergoing active revision as an example [@geocompr]. The PySAL community is also working on a work-in-progress book (https://geographicdata.science/book/intro.html), as are the R-spatial community (https://www.r-spatial.org/book). All these three reviews are also available online, and all use the notebook paradigm embedding reproducible code examples in the text.
 
+## References
 
 
